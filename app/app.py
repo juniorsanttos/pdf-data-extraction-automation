@@ -1,4 +1,4 @@
-from app.pdf_utils import *
+from pdf_utils import *
 import os
 import shutil
 
