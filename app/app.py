@@ -1,5 +1,4 @@
 from pdf_utils import *
-import os
 import shutil
 from pathlib import Path
 
