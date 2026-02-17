@@ -1,17 +1,25 @@
 from pdf_utils import *
 import os
 import shutil
+from pathlib import Path
 
 files = arquivos("Entrada")
-Entrada = "Entrada"
-Saida = "Processados"
+entrada_path = Path("Entrada")
+processados_Path = Path("Processados")
 
-for file in files:
+entrada_path.mkdir(exist_ok=True) #Caso não exista, crie a pasta "Entrada"
+processados_Path.mkdir(exist_ok=True) #Caso não exista, crie a pasta "Processados"
 
-    origem_file = os.path.join(Entrada, file)
-    
-    infos = extrair_dados(f"Entrada/{file}")
-    write_csv("resultado.csv",infos)
+if len(files) == 0: #Caso não tenha arquivos na pasta "Entrada"
+    print("Não há arquivos na pasta")
 
-    destine_file = os.path.join(Saida, file)
-    shutil.move(origem_file, destine_file)
+else:
+    for file in files:
+
+        origem_file = entrada_path / file #Origem da pasta
+        
+        infos = extrair_dados(entrada_path / file)
+        write_csv("resultado.csv",infos)
+
+        destine_file = processados_Path / file #Destino final - "Processados"
+        shutil.move(origem_file, destine_file) #Passa o arquivo da "Entrada" para os "Processados"
