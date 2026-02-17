@@ -48,7 +48,7 @@ Tudo isso com apenas um comando.
     │ ├── pdf_utils.py # Funções auxiliares para extração
     │
     ├── Entrada/ # PDFs a serem processados
-    ├── Processados/ # PDFs já processados
+    ├── Processados/ # PDFs já processados (Pasta criada automaticamente ao rodar script)
     │
     ├── requiriments.txt # Dependências do projeto
     ├── LICENSE 
