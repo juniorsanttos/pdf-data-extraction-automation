@@ -9,7 +9,6 @@ dict_infos = {
     "Latitude":r"(?:Latitude\s*\(s\)|COORDENADA\s*N/S)\s*:(.*?)(?=COORDENADA\s*E/O|Long\.|Município|\n|$)"
 }
 
-
 def arquivos(path):
     files = os.listdir(path)
     return files
